@@ -1,0 +1,21 @@
+[pytest]
+# Pytest configuration
+minversion = 7.0
+testpaths = playwright-suite/tests api-tests/tests mobile-tests/tests
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+addopts =
+    -v
+    --strict-markers
+    --tb=short
+    --disable-warnings
+markers =
+    smoke: Run smoke tests only
+    regression: Run regression tests
+    api: Run API tests
+    ui: Run UI tests
+    mobile: Run mobile tests
+    slow: Run slow tests
+    critical: Run critical tests
+console_output_style = progress
